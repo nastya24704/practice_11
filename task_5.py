@@ -15,17 +15,14 @@ try:
         try:
             result = a / b + c
         except ZeroDivisionError:
-            raise ZeroDivisionError("Деление на ноль (второе число не может быть нулем)")
+            raise ZeroDivisionError("division by 0")
 
         with open('output.txt', 'w', encoding="utf-8") as f_2:
             f_2.write(str(result))
 
 except ValueError as e:
     with open('output.txt', 'w', encoding="utf-8") as f_2:
-        f_2.write(f"Ошибка: {str(e)}")
+        f_2.write(f"data error: {str(e)}")
 except ZeroDivisionError as e:
     with open('output.txt', 'w', encoding="utf-8") as f_2:
-        f_2.write(f"Ошибка: {str(e)}")
-except Exception as e:
-    with open('output.txt', 'w', encoding="utf-8") as f_2:
-        f_2.write(f"Неизвестная ошибка: {str(e)}")
+        f_2.write(f"data error: {str(e)}")
